@@ -1,0 +1,35 @@
+﻿{
+
+  "KafkaPath": "F:\\kafka",
+
+  "DotNetty": {
+    "Port": 9010,
+    "IsUseLibuv": true,
+    "HeartbeatTimeOutSeconds": 10,
+    "SoBacklog": 100,
+    "Title": "thatservice",
+    "GroupTopic": "NotifyGroupMessage",
+    "RedisUserRouteTopic": "UserChannelRoute"
+  },
+
+  "ConnectionStrings": {
+    "Zookeeper": "127.0.0.1:2181",
+    "Redis": "192.168.1.65:6379",
+    "Kafka": "127.0.0.1:9092",
+    "MSSQL": "Data Source=192.168.1.65,2433;database=Project.Orleans;uid=sa;pwd=zhuJIAN320;MultipleActiveResultSets=true;"
+  },
+
+  "Orleans": {
+    "ServiceId": "SocketService",
+    "ClusterId": "SocketServiceCluster"
+  },
+  "RabbitMQ": {
+    "HostName": "192.168.1.65",
+    "Port": 5672,
+    "UserName": "admin",
+    "Password": "admin",
+    "NameOfStream": "RMQProvider",
+    "QueueNamePrefix": "Orleans_",
+    "NumberOfPartition": 1
+  }
+}
