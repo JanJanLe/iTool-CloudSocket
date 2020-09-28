@@ -1,6 +1,6 @@
 ﻿{
 
-  "KafkaPath": "F:\\kafka",
+  "KafkaPath": "G:\\kafka",
 
   "DotNetty": {
     "Port": 9010,
@@ -9,27 +9,31 @@
     "SoBacklog": 100,
     "Title": "thatservice",
     "GroupTopic": "NotifyGroupMessage",
-    "RedisUserRouteTopic": "UserChannelRoute"
+    "RedisUserRouteTopic": "UserChannelRoute",
+    "IsWss": true,
+    "SSLFilePath": "cloud.itool.store.pfx",
+    "SSLPassword": "N47SAaEI"
   },
 
   "ConnectionStrings": {
     "Zookeeper": "127.0.0.1:2181",
-    "Redis": "192.168.1.65:6379",
+    "Redis": "127.0.0.1:6379",
     "Kafka": "127.0.0.1:9092",
-    "MSSQL": "Data Source=192.168.1.65,2433;database=Project.Orleans;uid=sa;pwd=zhuJIAN320;MultipleActiveResultSets=true;"
+    "MSSQL": "Data Source=127.0.0.1,2433;database=Project.Orleans;uid=sa;pwd=zhuJIAN320;MultipleActiveResultSets=true;"
   },
 
   "Orleans": {
     "ServiceId": "SocketService",
     "ClusterId": "SocketServiceCluster"
   },
+
   "RabbitMQ": {
-    "HostName": "192.168.1.65",
+    "HostName": "rabbit.itool.store",
     "Port": 5672,
-    "UserName": "admin",
-    "Password": "admin",
+    "UserName": "Subscribe",
+    "Password": "123456",
     "NameOfStream": "RMQProvider",
     "QueueNamePrefix": "Orleans_",
-    "NumberOfPartition": 1
+    "NumberOfPartition": 10
   }
 }

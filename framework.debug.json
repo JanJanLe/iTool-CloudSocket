@@ -1,6 +1,6 @@
 ﻿{
 
-  "KafkaPath": "F:\\kafka",
+  "KafkaPath": "G:\\kafka",
 
   "DotNetty": {
     "Port": 9010,
@@ -16,13 +16,14 @@
     "Zookeeper": "127.0.0.1:2181",
     "Redis": "47.104.181.71:6379,password=Mage05Zj",
     "Kafka": "127.0.0.1:9092",
-    "MSSQL": "Data Source=DESKTOP-9C30CMA\\SQLEXPRESS;database=Project.Orleans;uid=sa;pwd=sa;MultipleActiveResultSets=true;"
+    "MSSQL": "Data Source=DESKTOP-9C30CMA\\SQLEXPRESS;database=Project.Orleans;uid=sa;pwd=sa;MultipleActiveResultSets=true;",
   },
 
   "Orleans": {
     "ServiceId": "SocketService",
     "ClusterId": "SocketServiceCluster"
   },
+
   "RabbitMQ": {
     "HostName": "rabbit.itool.store",
     "Port": 5672,
@@ -30,6 +31,6 @@
     "Password": "123456",
     "NameOfStream": "RMQProvider",
     "QueueNamePrefix": "Orleans_",
-    "NumberOfPartition": 1
+    "NumberOfPartition": 10
   }
 }
