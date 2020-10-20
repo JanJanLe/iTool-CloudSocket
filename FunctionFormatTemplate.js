@@ -16,7 +16,7 @@ function codeFormat(value) {
 	if (typeof moduleExports == "function") {
 		let parameter = getParameterNames(moduleExports);
 		let parameterStr = parameter.length ? "," + parameter.join(",") : "";
-		return `module.exports = function(callback, system ${parameterStr}) {
+		return `module.exports = async function(callback, system ${parameterStr}) {
 
 						if(!system) {
 							system = {};
@@ -54,7 +54,7 @@ function codeFormat(value) {
                       ${value.replace(/module.exports/g, 'var module_exports_action')}
                        module_exports_action = module_exports_action.bind(system);
                       try{
-                        system.result = module_exports_action(${parameter.join(
+                        system.result = await module_exports_action(${parameter.join(
 			","
 		)});
                       } catch(ex) {
@@ -80,7 +80,7 @@ function codeFormat(value) {
 				let parameterStr = parameter.length
 					? "," + parameter.join(",")
 					: "";
-				functionstr.push(`${keyName}:function(callback, system ${parameterStr}) {
+				functionstr.push(`${keyName}: async function(callback, system ${parameterStr}) {
 
 						if(!system) {
 							system = {};
@@ -117,7 +117,7 @@ function codeFormat(value) {
 
                       var module_exports_action = ${moduleObject.toString()}.bind(system);
                       try{
-                        system.result = module_exports_action(${parameter.join(
+                        system.result = await module_exports_action(${parameter.join(
 					","
 				)});
                       } catch(ex) {
