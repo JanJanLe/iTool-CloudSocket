@@ -17,7 +17,8 @@
           "Grain.State": "1.0.0",
           "Local.Implement": "1.0.0",
           "Local.Interface": "1.0.0",
-          "Microsoft.Orleans.Client": "3.3.0"
+          "Microsoft.Orleans.Client": "3.3.0",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.5"
         },
         "runtime": {
           "DotNetty.Main.dll": {}
@@ -858,6 +859,7 @@
           }
         }
       },
+      "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.9.5": {},
       "Microsoft.Win32.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -2803,6 +2805,13 @@
       "sha512": "sha512-gMuu4avUXMFqrYCRYX/Gl8Mq+pLvgcOkhlG1/WBeefzPtoTK9zdCFmOGg5F/4BNBHk7TF33zKwPNXPmu/r0pAg==",
       "path": "microsoft.orleans.runtime.abstractions/3.3.0",
       "hashPath": "microsoft.orleans.runtime.abstractions.3.3.0.nupkg.sha512"
+    },
+    "Microsoft.VisualStudio.Azure.Containers.Tools.Targets/1.9.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rSZX0aAxacegOntSNMUO3rkM9ocp5jrnaM7xdzhBn3OB5XN1aFHDhoXhCswSlXwGnHmIAMxNSfLsCh9bWOnTzw==",
+      "path": "microsoft.visualstudio.azure.containers.tools.targets/1.9.5",
+      "hashPath": "microsoft.visualstudio.azure.containers.tools.targets.1.9.5.nupkg.sha512"
     },
     "Microsoft.Win32.Primitives/4.3.0": {
       "type": "package",
