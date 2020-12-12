@@ -1,4 +1,4 @@
-﻿{
+{
 
   "KafkaPath": "G:\\kafka",
 
@@ -9,10 +9,7 @@
     "SoBacklog": 100,
     "Title": "thatservice",
     "GroupTopic": "NotifyGroupMessage",
-    "RedisUserRouteTopic": "UserChannelRoute",
-    "IsWss": true,
-    "SSLFilePath": "cloud.itool.store.pfx",
-    "SSLPassword": "N47SAaEI"
+    "RedisUserRouteTopic": "UserChannelRoute"
   },
 
   "ConnectionStrings": {
