@@ -1,17 +1,18 @@
 ﻿{
   "DotNetty": {
+    "Title": "thatservice",
+    "Host": "127.0.0.1",
     "Port": 9010,
     "IsUseLibuv": true,
-    "HeartbeatTimeOutSeconds": 10,
-    "SoBacklog": 100,
-    "Title": "thatservice",
+    "HeartbeatTimeOutSeconds": 20,
+    "SoBacklog": 100
     //"IsWss": true,
     //"SSLFilePath": "cloud.itool.store.pfx",
     //"SSLPassword": "N47SAaEI"
   },
 
   "ConnectionStrings": {
-    "MSSQL": "Data Source=127.0.0.1,2433;database=Project.Orleans;uid=sa;pwd=zhuJIAN320;MultipleActiveResultSets=true;"
+    "MSSQL": "Data Source=172.17.64.1,2433;database=Project.Orleans;uid=sa;pwd=zhuJIAN320;MultipleActiveResultSets=true;"
   },
 
   "Orleans": {
@@ -20,10 +21,10 @@
   },
 
   "RabbitMQ": {
-    "HostName": "rabbit.itool.store",
+    "HostName": "172.17.64.1",
     "Port": 5672,
-    "UserName": "Subscribe",
-    "Password": "123456",
+    "UserName": "admin",
+    "Password": "admin",
     "NameOfStream": "RMQProvider",
     "QueueNamePrefix": "Orleans_",
     "NumberOfPartition": 1

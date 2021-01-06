@@ -9,16 +9,15 @@
       "DotNetty.Main/1.0.0": {
         "dependencies": {
           "Core.DataAccess.ApiJson": "1.0.0",
-          "DTO.SocketService": "1.0.0",
+          "Core.Framework": "1.0.0",
           "DotNetty.Framework": "1.0.0",
-          "DotNetty.IQueue": "1.0.0",
-          "DotNetty.Orleans.Client": "1.0.0",
-          "Grain.IBaseModule": "1.0.0",
-          "Grain.State": "1.0.0",
+          "Grain.Interfaces": "1.0.0",
           "Local.Implement": "1.0.0",
           "Local.Interface": "1.0.0",
           "Microsoft.Orleans.Client": "3.3.0",
-          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.5"
+          "Microsoft.Orleans.Clustering.AdoNet": "3.3.0",
+          "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.9.5",
+          "Orleans.Streams.RabbitMqStreamProvider": "1.0.0"
         },
         "runtime": {
           "DotNetty.Main.dll": {}
@@ -42,18 +41,6 @@
           "lib/netstandard2.0/BouncyCastle.Crypto.dll": {
             "assemblyVersion": "1.8.2.0",
             "fileVersion": "1.8.18099.1"
-          }
-        }
-      },
-      "Confluent.Kafka/1.5.2": {
-        "dependencies": {
-          "System.Memory": "4.5.4",
-          "librdkafka.redist": "1.5.2"
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/Confluent.Kafka.dll": {
-            "assemblyVersion": "1.5.2.0",
-            "fileVersion": "1.5.2.0"
           }
         }
       },
@@ -244,95 +231,6 @@
           }
         }
       },
-      "librdkafka.redist/1.5.2": {
-        "runtimeTargets": {
-          "runtimes/linux-x64/native/alpine-librdkafka.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x64/native/centos7-librdkafka.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x64/native/debian9-librdkafka.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/linux-x64/native/librdkafka.so": {
-            "rid": "linux-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/osx-x64/native/librdkafka.dylib": {
-            "rid": "osx-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/librdkafka.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/librdkafkacpp.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/libzstd.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/msvcp120.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "12.0.21005.1"
-          },
-          "runtimes/win-x64/native/msvcr120.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "12.0.21005.1"
-          },
-          "runtimes/win-x64/native/zlib.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "1.2.8.0"
-          },
-          "runtimes/win-x86/native/librdkafka.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/librdkafkacpp.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/libzstd.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/msvcp120.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "12.0.21005.1"
-          },
-          "runtimes/win-x86/native/msvcr120.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "12.0.21005.1"
-          },
-          "runtimes/win-x86/native/zlib.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "1.2.8.0"
-          }
-        }
-      },
       "Libuv/1.10.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
@@ -469,28 +367,6 @@
           }
         }
       },
-      "Microsoft.Extensions.Configuration.CommandLine/3.1.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.CommandLine.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
-        }
-      },
-      "Microsoft.Extensions.Configuration.EnvironmentVariables/3.1.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
-        }
-      },
       "Microsoft.Extensions.Configuration.FileExtensions/3.1.9": {
         "dependencies": {
           "Microsoft.Extensions.Configuration": "3.1.9",
@@ -510,17 +386,6 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.Json.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
-        }
-      },
-      "Microsoft.Extensions.Configuration.UserSecrets/3.1.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration.Json": "3.1.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Configuration.UserSecrets.dll": {
             "assemblyVersion": "3.1.9.0",
             "fileVersion": "3.100.920.47302"
           }
@@ -587,40 +452,12 @@
           }
         }
       },
-      "Microsoft.Extensions.Hosting/3.1.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Configuration": "3.1.9",
-          "Microsoft.Extensions.Configuration.CommandLine": "3.1.9",
-          "Microsoft.Extensions.Configuration.EnvironmentVariables": "3.1.9",
-          "Microsoft.Extensions.Configuration.UserSecrets": "3.1.9",
-          "Microsoft.Extensions.DependencyInjection": "3.1.9",
-          "Microsoft.Extensions.FileProviders.Physical": "3.1.9",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.9",
-          "Microsoft.Extensions.Logging": "3.1.9",
-          "Microsoft.Extensions.Logging.Console": "3.1.9",
-          "Microsoft.Extensions.Logging.Debug": "3.1.9",
-          "Microsoft.Extensions.Logging.EventLog": "3.1.9",
-          "Microsoft.Extensions.Logging.EventSource": "3.1.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
-        }
-      },
-      "Microsoft.Extensions.Hosting.Abstractions/3.1.9": {
+      "Microsoft.Extensions.Hosting.Abstractions/3.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "3.1.9",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
           "Microsoft.Extensions.FileProviders.Abstractions": "3.1.9",
           "Microsoft.Extensions.Logging.Abstractions": "3.1.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Hosting.Abstractions.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
         }
       },
       "Microsoft.Extensions.Logging/3.1.9": {
@@ -665,40 +502,6 @@
         },
         "runtime": {
           "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Console.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.Debug/3.1.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "3.1.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.Debug.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.EventLog/3.1.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "3.1.9",
-          "System.Diagnostics.EventLog": "4.7.0"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.EventLog.dll": {
-            "assemblyVersion": "3.1.9.0",
-            "fileVersion": "3.100.920.47302"
-          }
-        }
-      },
-      "Microsoft.Extensions.Logging.EventSource/3.1.9": {
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "3.1.9"
-        },
-        "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Logging.EventSource.dll": {
             "assemblyVersion": "3.1.9.0",
             "fileVersion": "3.100.920.47302"
           }
@@ -766,7 +569,7 @@
           "Microsoft.Extensions.Configuration": "3.1.9",
           "Microsoft.Extensions.DependencyInjection": "3.1.9",
           "Microsoft.Extensions.DependencyModel": "3.0.0",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.9",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
           "Microsoft.Extensions.Logging": "3.1.9",
           "Microsoft.Extensions.ObjectPool": "3.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "3.1.9",
@@ -818,7 +621,7 @@
       "Microsoft.Orleans.OrleansRuntime/3.3.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Connections.Abstractions": "3.0.0",
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.9",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
           "Microsoft.Extensions.Options": "3.1.9",
           "Microsoft.Orleans.Core": "3.3.0",
           "Microsoft.Orleans.Runtime.Abstractions": "3.3.0",
@@ -834,21 +637,9 @@
           }
         }
       },
-      "Microsoft.Orleans.OrleansZooKeeperUtils/3.3.0": {
-        "dependencies": {
-          "Microsoft.Orleans.Runtime.Abstractions": "3.3.0",
-          "ZooKeeperNetEx": "3.4.12.1"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Orleans.Clustering.ZooKeeper.dll": {
-            "assemblyVersion": "2.0.0.0",
-            "fileVersion": "2.0.0.0"
-          }
-        }
-      },
       "Microsoft.Orleans.Runtime.Abstractions/3.3.0": {
         "dependencies": {
-          "Microsoft.Extensions.Hosting.Abstractions": "3.1.9",
+          "Microsoft.Extensions.Hosting.Abstractions": "3.0.0",
           "Microsoft.Extensions.Options": "3.1.9",
           "Microsoft.Orleans.Core": "3.3.0"
         },
@@ -962,6 +753,26 @@
           }
         }
       },
+      "NLog/4.7.4": {
+        "runtime": {
+          "lib/netstandard2.0/NLog.dll": {
+            "assemblyVersion": "4.0.0.0",
+            "fileVersion": "4.7.4.12037"
+          }
+        }
+      },
+      "NLog.Extensions.Logging/1.6.5": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "3.1.9",
+          "NLog": "4.7.4"
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/NLog.Extensions.Logging.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.6.5.1409"
+          }
+        }
+      },
       "Npgsql/3.2.7": {
         "dependencies": {
           "System.Threading.Tasks.Extensions": "4.5.4"
@@ -994,7 +805,7 @@
           }
         }
       },
-      "Quartz/3.2.2": {
+      "Quartz/3.2.3": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "3.1.9",
           "System.Configuration.ConfigurationManager": "4.7.0",
@@ -1002,8 +813,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Quartz.dll": {
-            "assemblyVersion": "3.2.2.0",
-            "fileVersion": "3.2.2.0"
+            "assemblyVersion": "3.2.3.0",
+            "fileVersion": "3.2.3.0"
           }
         }
       },
@@ -1240,7 +1051,7 @@
           "SshNet.Security.Cryptography": "1.2.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.Diagnostics.Tools": "4.3.0",
-          "System.Diagnostics.TraceSource": "4.3.0",
+          "System.Diagnostics.TraceSource": "4.0.0",
           "System.Globalization": "4.3.0",
           "System.IO": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
@@ -1401,13 +1212,6 @@
           }
         }
       },
-      "System.Diagnostics.EventLog/4.7.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.0",
-          "Microsoft.Win32.Registry": "4.7.0",
-          "System.Security.Principal.Windows": "4.7.0"
-        }
-      },
       "System.Diagnostics.PerformanceCounter/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1445,7 +1249,7 @@
           "System.Runtime": "4.3.1"
         }
       },
-      "System.Diagnostics.TraceSource/4.3.0": {
+      "System.Diagnostics.TraceSource/4.0.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "System.Collections": "4.3.0",
@@ -2164,19 +1968,6 @@
           }
         }
       },
-      "ZooKeeperNetEx/3.4.12.1": {
-        "dependencies": {
-          "NETStandard.Library": "1.6.1",
-          "System.Diagnostics.TraceSource": "4.3.0",
-          "System.Net.NameResolution": "4.3.0"
-        },
-        "runtime": {
-          "lib/netstandard1.3/ZooKeeperNetEx.dll": {
-            "assemblyVersion": "3.4.12.1",
-            "fileVersion": "3.4.12.1"
-          }
-        }
-      },
       "Core.DataAccess.ApiJson/1.0.0": {
         "dependencies": {
           "AspectCore.Extensions.Reflection": "2.1.0",
@@ -2202,43 +1993,22 @@
         "dependencies": {
           "Microsoft.AspNetCore.NodeServices": "3.1.9",
           "Microsoft.Extensions.DependencyInjection": "3.1.9",
-          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9"
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.9",
+          "NLog.Extensions.Logging": "1.6.5",
+          "Quartz": "3.2.3"
         },
         "runtime": {
           "Core.Framework.dll": {}
         }
       },
-      "Core.Framework.Redis/1.0.0": {
-        "dependencies": {
-          "Core.Framework": "1.0.0",
-          "Newtonsoft.Json": "12.0.3",
-          "StackExchange.Redis": "2.1.58"
-        },
-        "runtime": {
-          "Core.Framework.Redis.dll": {}
-        }
-      },
-      "Core.Framework.Util/1.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "Quartz": "3.2.2"
-        },
-        "runtime": {
-          "Core.Framework.Util.dll": {}
-        }
-      },
       "DotNetty.Framework/1.0.0": {
         "dependencies": {
           "Core.Framework": "1.0.0",
-          "Core.Framework.Redis": "1.0.0",
-          "Core.Framework.Util": "1.0.0",
           "DotNetty.Buffers": "0.6.0",
           "DotNetty.Codecs": "0.6.0",
           "DotNetty.Codecs.Http": "0.6.0",
           "DotNetty.Common": "0.6.0",
           "DotNetty.Handlers": "0.6.0",
-          "DotNetty.IQueue": "1.0.0",
-          "DotNetty.Orleans.Client": "1.0.0",
           "DotNetty.Transport": "0.6.0",
           "DotNetty.Transport.Libuv": "0.6.0",
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
@@ -2247,6 +2017,8 @@
           "Microsoft.Extensions.Configuration.Json": "3.1.9",
           "Microsoft.Extensions.DependencyInjection": "3.1.9",
           "Microsoft.Extensions.Logging.Console": "3.1.9",
+          "Microsoft.Orleans.Core": "3.3.0",
+          "Microsoft.Orleans.Core.Abstractions": "3.3.0",
           "Newtonsoft.Json": "12.0.3",
           "StackExchange.Redis": "2.1.58"
         },
@@ -2254,66 +2026,22 @@
           "DotNetty.Framework.dll": {}
         }
       },
-      "DotNetty.IQueue/1.0.0": {
-        "dependencies": {
-          "Confluent.Kafka": "1.5.2",
-          "Core.Framework": "1.0.0",
-          "RabbitMQ.Client": "6.2.1"
-        },
-        "runtime": {
-          "DotNetty.IQueue.dll": {}
-        }
-      },
-      "DotNetty.Orleans.Client/1.0.0": {
-        "dependencies": {
-          "Core.Framework": "1.0.0",
-          "DotNetty.Orleans.IGrains": "1.0.0",
-          "Microsoft.Extensions.Hosting": "3.1.9",
-          "Microsoft.Orleans.Client": "3.3.0",
-          "Microsoft.Orleans.Clustering.AdoNet": "3.3.0",
-          "Microsoft.Orleans.OrleansZooKeeperUtils": "3.3.0",
-          "Orleans.Streams.RabbitMqStreamProvider": "1.0.0"
-        },
-        "runtime": {
-          "DotNetty.Orleans.Client.dll": {}
-        }
-      },
-      "DotNetty.Orleans.IGrains/1.0.0": {
-        "dependencies": {
-          "Microsoft.Orleans.Core": "3.3.0",
-          "Microsoft.Orleans.OrleansProviders": "3.3.0",
-          "Microsoft.Orleans.OrleansRuntime": "3.3.0"
-        },
-        "runtime": {
-          "DotNetty.Orleans.IGrains.dll": {}
-        }
-      },
-      "DTO.SocketService/1.0.0": {
-        "runtime": {
-          "DTO.SocketService.dll": {}
-        }
-      },
-      "Grain.IBaseModule/1.0.0": {
+      "Grain.Interfaces/1.0.0": {
         "dependencies": {
           "Core.DataAccess.Model": "1.0.0",
           "Core.Framework": "1.0.0",
-          "Core.Framework.Util": "1.0.0",
-          "DTO.SocketService": "1.0.0",
           "Grain.State": "1.0.0",
           "Microsoft.Orleans.Core": "3.3.0",
           "Microsoft.Orleans.OrleansProviders": "3.3.0",
           "Microsoft.Orleans.OrleansRuntime": "3.3.0"
         },
         "runtime": {
-          "Grain.IBaseModule.dll": {}
+          "Grain.Interfaces.dll": {}
         }
       },
       "Grain.State/1.0.0": {
         "dependencies": {
           "Core.DataAccess.Model": "1.0.0",
-          "Core.Framework.Redis": "1.0.0",
-          "Core.Framework.Util": "1.0.0",
-          "DotNetty.IQueue": "1.0.0",
           "Microsoft.Orleans.Core": "3.3.0",
           "Microsoft.Orleans.OrleansProviders": "3.3.0",
           "Microsoft.Orleans.OrleansRuntime": "3.3.0"
@@ -2326,8 +2054,6 @@
         "dependencies": {
           "Core.DataAccess.Model": "1.0.0",
           "Core.Framework": "1.0.0",
-          "Core.Framework.Util": "1.0.0",
-          "DTO.SocketService": "1.0.0",
           "Dapper": "2.0.35",
           "Dapper.SimpleCRUD": "2.2.0.1",
           "Local.Interface": "1.0.0"
@@ -2339,10 +2065,7 @@
       "Local.Interface/1.0.0": {
         "dependencies": {
           "Core.DataAccess.Model": "1.0.0",
-          "Core.Framework": "1.0.0",
-          "Core.Framework.Util": "1.0.0",
-          "DTO.SocketService": "1.0.0",
-          "DotNetty.Framework": "1.0.0"
+          "Core.Framework": "1.0.0"
         },
         "runtime": {
           "Local.Interface.dll": {}
@@ -2378,13 +2101,6 @@
       "sha512": "sha512-jAy3uHN1U9DpoT/TgLqDTEhlccn/4doOVxhSmmNsnoSsGfHT9Lwr634ac9D0YFujAhNw61nWF4UIpHyzv0aQww==",
       "path": "bouncycastle.netcore/1.8.3",
       "hashPath": "bouncycastle.netcore.1.8.3.nupkg.sha512"
-    },
-    "Confluent.Kafka/1.5.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-VUoebb/sBX193Xs5j0f4bk1KBKMz+ZsF6h1aSVrOpysvvnDLQGgiLgiaGJo6yDhq7L1qcd4ElBPbeFZpPrB9Rg==",
-      "path": "confluent.kafka/1.5.2",
-      "hashPath": "confluent.kafka.1.5.2.nupkg.sha512"
     },
     "Dapper/2.0.35": {
       "type": "package",
@@ -2477,13 +2193,6 @@
       "path": "k4os.hash.xxhash/1.0.6",
       "hashPath": "k4os.hash.xxhash.1.0.6.nupkg.sha512"
     },
-    "librdkafka.redist/1.5.2": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-yGq+QN6bF05xO/2qDDeQ6cXSrirI9llBmEhPe7iKNq/vHCtdooTvolrKqROJ4ciT1whVjAgUQYC28y5GO+Kvqg==",
-      "path": "librdkafka.redist/1.5.2",
-      "hashPath": "librdkafka.redist.1.5.2.nupkg.sha512"
-    },
     "Libuv/1.10.0": {
       "type": "package",
       "serviceable": true,
@@ -2568,20 +2277,6 @@
       "path": "microsoft.extensions.configuration.binder/3.1.9",
       "hashPath": "microsoft.extensions.configuration.binder.3.1.9.nupkg.sha512"
     },
-    "Microsoft.Extensions.Configuration.CommandLine/3.1.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-IcYsJJMCpWSyGMVdcvXTjQ+whQRRoaE4dWdhvsUmjLIsvCIMgs0j11NPYIeayLWB6tm/V3/AkF1u3PiaU/5hcw==",
-      "path": "microsoft.extensions.configuration.commandline/3.1.9",
-      "hashPath": "microsoft.extensions.configuration.commandline.3.1.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Configuration.EnvironmentVariables/3.1.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ZAtRZsyWGhdCM/PPr74hDfFLDmQgmA7B7iut0mDVBj3IgLtYD5V23vYOZd5FEXEAemQRXxJ0ZVTncZHPBa6ZiA==",
-      "path": "microsoft.extensions.configuration.environmentvariables/3.1.9",
-      "hashPath": "microsoft.extensions.configuration.environmentvariables.3.1.9.nupkg.sha512"
-    },
     "Microsoft.Extensions.Configuration.FileExtensions/3.1.9": {
       "type": "package",
       "serviceable": true,
@@ -2595,13 +2290,6 @@
       "sha512": "sha512-v1epO1J3qIqxwusz0gifp7hO+J2F/tBZOQAR9I1pLFDrX6NjQaYbZy4RGAU554Ntc0+lYAi0FA8CNMrQcTegYw==",
       "path": "microsoft.extensions.configuration.json/3.1.9",
       "hashPath": "microsoft.extensions.configuration.json.3.1.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Configuration.UserSecrets/3.1.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6HR/VgBsIaEx7Cb9KXRNrQLpI6SbVqt1Rtop04XcbJd6/3+Bk+v+wWM58ZXdRBshgPe4N6/7CbbRuATsHHdjtg==",
-      "path": "microsoft.extensions.configuration.usersecrets/3.1.9",
-      "hashPath": "microsoft.extensions.configuration.usersecrets.3.1.9.nupkg.sha512"
     },
     "Microsoft.Extensions.DependencyInjection/3.1.9": {
       "type": "package",
@@ -2645,19 +2333,12 @@
       "path": "microsoft.extensions.filesystemglobbing/3.1.9",
       "hashPath": "microsoft.extensions.filesystemglobbing.3.1.9.nupkg.sha512"
     },
-    "Microsoft.Extensions.Hosting/3.1.9": {
+    "Microsoft.Extensions.Hosting.Abstractions/3.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SRpLUGa68CK7RRlxQRsprz8kfuOdb6rjl2sDlkagY7kaymPeFCf2NEgXP0LQrXvc0s1arJaaaKl/1t73JmPZDg==",
-      "path": "microsoft.extensions.hosting/3.1.9",
-      "hashPath": "microsoft.extensions.hosting.3.1.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Hosting.Abstractions/3.1.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-CwYEhXkeE4SXyaZ+PuH2WqsBBL/q1EKtRd3mJLm4UOHNzmrb/Gc3zQ6o38eRY9JgrAq3AJX1EBe7jw+vpjoCbA==",
-      "path": "microsoft.extensions.hosting.abstractions/3.1.9",
-      "hashPath": "microsoft.extensions.hosting.abstractions.3.1.9.nupkg.sha512"
+      "sha512": "sha512-qeDWS5ErmkUN96BdQqpmeCmLk5HJWQ/SPw3ux5v5/Qb0hKZS5wojBMulnBC7JUEiBwg7Ir71Yjf1lFiRT5MdtQ==",
+      "path": "microsoft.extensions.hosting.abstractions/3.0.0",
+      "hashPath": "microsoft.extensions.hosting.abstractions.3.0.0.nupkg.sha512"
     },
     "Microsoft.Extensions.Logging/3.1.9": {
       "type": "package",
@@ -2686,27 +2367,6 @@
       "sha512": "sha512-8Dusl1rkDivmvLrwj6QAo917xMHPiDBzG3IG3agiyDdtsC/fRp+1VN5iIN+O09PtEaMged2OLA6wCDwfSTSTZw==",
       "path": "microsoft.extensions.logging.console/3.1.9",
       "hashPath": "microsoft.extensions.logging.console.3.1.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.Debug/3.1.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-jzGaqVN6dojAAEiLJjRr/Ts1AAzEXQQ/pMyfVmhEM3yLU4jJh7hHprAVHDnpxr/BOcY46G6SvUROj0LFsnLsWQ==",
-      "path": "microsoft.extensions.logging.debug/3.1.9",
-      "hashPath": "microsoft.extensions.logging.debug.3.1.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.EventLog/3.1.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-htKOKzW1mC7jYG0ItmHUofKtTyAXiwpH72/ADf0n3QomUx+QD4qP+Bl0HSc2u3nEb1i7kJEcZ/vPPVvDzdrv3w==",
-      "path": "microsoft.extensions.logging.eventlog/3.1.9",
-      "hashPath": "microsoft.extensions.logging.eventlog.3.1.9.nupkg.sha512"
-    },
-    "Microsoft.Extensions.Logging.EventSource/3.1.9": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-A1Q/JTfMUCUcK9Cn7wYYq1wB+6KR/XKP3UvcsYODS3QTrYkrku4PYFbQETeU7MatRDe3LSUgtGC18RMwwYrWIQ==",
-      "path": "microsoft.extensions.logging.eventsource/3.1.9",
-      "hashPath": "microsoft.extensions.logging.eventsource.3.1.9.nupkg.sha512"
     },
     "Microsoft.Extensions.ObjectPool/3.0.0": {
       "type": "package",
@@ -2792,13 +2452,6 @@
       "path": "microsoft.orleans.orleansruntime/3.3.0",
       "hashPath": "microsoft.orleans.orleansruntime.3.3.0.nupkg.sha512"
     },
-    "Microsoft.Orleans.OrleansZooKeeperUtils/3.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-TD23Qfxos3ZXMjgyL0YMgFjEDoh2V0Umti/FqLZl5cwsbZx3mqzPniD2xWdA6VHCdPbM6HDHDOxNxDTUMAFh3A==",
-      "path": "microsoft.orleans.orleanszookeeperutils/3.3.0",
-      "hashPath": "microsoft.orleans.orleanszookeeperutils.3.3.0.nupkg.sha512"
-    },
     "Microsoft.Orleans.Runtime.Abstractions/3.3.0": {
       "type": "package",
       "serviceable": true,
@@ -2855,6 +2508,20 @@
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
+    "NLog/4.7.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gSGX/ur0P3jp17H37HW7ycXR6L1578tQbilf4HLX1t2viCDFgtwEsfHMPf0/jcuf7/qqGgoU/vKgyQ9hzxuOEQ==",
+      "path": "nlog/4.7.4",
+      "hashPath": "nlog.4.7.4.nupkg.sha512"
+    },
+    "NLog.Extensions.Logging/1.6.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-f+7W4DhNkpFdg2X6fNR8Ts06TSM9Hd2BdfXem3esTFGR9cAVdQRPwf/N0H0Fc1vidrLJVETkmywXG/0Qz/lxjw==",
+      "path": "nlog.extensions.logging/1.6.5",
+      "hashPath": "nlog.extensions.logging.1.6.5.nupkg.sha512"
+    },
     "Npgsql/3.2.7": {
       "type": "package",
       "serviceable": true,
@@ -2876,12 +2543,12 @@
       "path": "pipelines.sockets.unofficial/2.1.16",
       "hashPath": "pipelines.sockets.unofficial.2.1.16.nupkg.sha512"
     },
-    "Quartz/3.2.2": {
+    "Quartz/3.2.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-SZmyLsTvoTP7CDQiH1gpZgfKu8CM0xoJmOCfrm7hr5B4pYdqldUyjm9HjfSJxTcXxLJmheulnkVOiaWaDRBTCA==",
-      "path": "quartz/3.2.2",
-      "hashPath": "quartz.3.2.2.nupkg.sha512"
+      "sha512": "sha512-AWybQvHH/eI69NEiqe4x4jgCGYOCxHfsbrK7IdZJU35MC+85wneNtY4xd9CkUiLlYJvV7YsU0uBMzJV00HKtWg==",
+      "path": "quartz/3.2.3",
+      "hashPath": "quartz.3.2.3.nupkg.sha512"
     },
     "RabbitMQ.Client/6.2.1": {
       "type": "package",
@@ -3191,13 +2858,6 @@
       "path": "system.diagnostics.diagnosticsource/4.7.1",
       "hashPath": "system.diagnostics.diagnosticsource.4.7.1.nupkg.sha512"
     },
-    "System.Diagnostics.EventLog/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-iDoKGQcRwX0qwY+eAEkaJGae0d/lHlxtslO+t8pJWAUxlvY3tqLtVOPnW2UU4cFjP0Y/L1QBqhkZfSyGqVMR2w==",
-      "path": "system.diagnostics.eventlog/4.7.0",
-      "hashPath": "system.diagnostics.eventlog.4.7.0.nupkg.sha512"
-    },
     "System.Diagnostics.PerformanceCounter/4.7.0": {
       "type": "package",
       "serviceable": true,
@@ -3219,12 +2879,12 @@
       "path": "system.diagnostics.tools/4.3.0",
       "hashPath": "system.diagnostics.tools.4.3.0.nupkg.sha512"
     },
-    "System.Diagnostics.TraceSource/4.3.0": {
+    "System.Diagnostics.TraceSource/4.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-VnYp1NxGx8Ww731y2LJ1vpfb/DKVNKEZ8Jsh5SgQTZREL/YpWRArgh9pI8CDLmgHspZmLL697CaLvH85qQpRiw==",
-      "path": "system.diagnostics.tracesource/4.3.0",
-      "hashPath": "system.diagnostics.tracesource.4.3.0.nupkg.sha512"
+      "sha512": "sha512-6WVCczFZKXwpWpzd/iJkYnsmWTSFFiU24Xx/YdHXBcu+nFI/ehTgeqdJQFbtRPzbrO3KtRNjvkhtj4t5/WwWsA==",
+      "path": "system.diagnostics.tracesource/4.0.0",
+      "hashPath": "system.diagnostics.tracesource.4.0.0.nupkg.sha512"
     },
     "System.Diagnostics.Tracing/4.3.0": {
       "type": "package",
@@ -3723,13 +3383,6 @@
       "path": "system.xml.xpath.xmldocument/4.0.1",
       "hashPath": "system.xml.xpath.xmldocument.4.0.1.nupkg.sha512"
     },
-    "ZooKeeperNetEx/3.4.12.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-AhDh6BIDE9XqtFmY5HS8E9EVsvosKAvoIZxN//FbaINpPxDl8Z2X5a84eDKe+6z3527drZskSW2MEEPl0sMp4Q==",
-      "path": "zookeepernetex/3.4.12.1",
-      "hashPath": "zookeepernetex.3.4.12.1.nupkg.sha512"
-    },
     "Core.DataAccess.ApiJson/1.0.0": {
       "type": "project",
       "serviceable": false,
@@ -3745,42 +3398,12 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Core.Framework.Redis/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Core.Framework.Util/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "DotNetty.Framework/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "DotNetty.IQueue/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DotNetty.Orleans.Client/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DotNetty.Orleans.IGrains/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DTO.SocketService/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Grain.IBaseModule/1.0.0": {
+    "Grain.Interfaces/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
