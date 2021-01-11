@@ -12,16 +12,16 @@
   },
 
   "ConnectionStrings": {
-    "MSSQL": "Data Source=172.17.64.1,2433;database=Project.Orleans;uid=sa;pwd=zhuJIAN320;MultipleActiveResultSets=true;"
+    "MSSQL": "Data Source=42.193.106.232,2433;database=Project.Orleans;uid=sa;pwd=zhuJIAN320;MultipleActiveResultSets=true;"
   },
 
   "Orleans": {
-    "ServiceId": "SocketService",
-    "ClusterId": "SocketServiceCluster"
+    "ServiceId": "iToolSocketService",
+    "ClusterId": "iToolServiceCluster"
   },
 
   "RabbitMQ": {
-    "HostName": "172.17.64.1",
+    "HostName": "42.193.106.232",
     "Port": 5672,
     "UserName": "admin",
     "Password": "admin",

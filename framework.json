@@ -1,13 +1,11 @@
 ﻿{
   "DotNetty": {
+    "Title": "thatservice",
+    "Host": "127.0.0.1",
     "Port": 9010,
     "IsUseLibuv": true,
-    "HeartbeatTimeOutSeconds": 10,
-    "SoBacklog": 100,
-    "Title": "thatservice",
-    //"IsWss": true,
-    //"SSLFilePath": "cloud.itool.store.pfx",
-    //"SSLPassword": "N47SAaEI"
+    "HeartbeatTimeOutSeconds": 20,
+    "SoBacklog": 100
   },
 
   "ConnectionStrings": {
@@ -15,15 +13,15 @@
   },
 
   "Orleans": {
-    "ServiceId": "SocketService",
-    "ClusterId": "SocketServiceCluster"
+    "ServiceId": "iToolSocketService",
+    "ClusterId": "iToolServiceCluster"
   },
 
   "RabbitMQ": {
-    "HostName": "rabbit.itool.store",
+    "HostName": "127.0.0.1",
     "Port": 5672,
-    "UserName": "Subscribe",
-    "Password": "123456",
+    "UserName": "admin",
+    "Password": "admin",
     "NameOfStream": "RMQProvider",
     "QueueNamePrefix": "Orleans_",
     "NumberOfPartition": 1

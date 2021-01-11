@@ -15,6 +15,6 @@ RUN chmod 755 /app
 USER admin
 
 
-CMD ["-sql", "-rabbit", "-redis","-service", "-netty", "-heartbeat"]
+CMD ["-sql", "-rabbit", "-redis","-service", "-netty", "-heartbeat", "-host"]
 
 ENTRYPOINT ["dotnet", "DotNetty.Main.dll"]
